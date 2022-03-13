@@ -1,12 +1,3 @@
-const content = document.querySelector("div");
-
-content.textContent = 
-"Jajaja";
-
-
-
-
-
 // ACTUAL EXERCISE
 
 
@@ -23,9 +14,12 @@ const family = [
     {first: "Chispa", last: "Chispina", year: 2010, death: 2033}
 ];
 
-const people = ["Sanchez, Ivan", "Sanchez, Andrea", "Sanchez, Antonio,", "Sanchez, Mari", "Sanchez, Santi", "Cordones, Pilar", "Cordones, Chari", "Cordones, Juani", "Serrano, Isi", "Cordones, Manuel", "Guijarro, Antonia", "Sanchez, Eulogio"];
+const people = ["Sanchez, Ivan", "Sanchez, Andrea", "Sanchez, Antonio", "Sanchez, Mari", "Sanchez, Santi", "Cordones, Pilar", "Cordones, Chari", "Cordones, Juani", "Serrano, Isi", "Cordones, Manuel", "Guijarro, Antonia", "Sanchez, Eulogio"];
 
 const composed = ["Ivan de Cul", "Andrea de Poll", "Mama de Mier", "Padre de Cojone", "Abu de Choch", "Chispa der Waals", "Coco Cocon", "Mari Maria", "Santi Santo", "Chari Charo", "Juani Juana"];
+
+const data = ["dick", "cum", "ass", "dick", "hole", "dick", "dick", "nips", "nips", "dick", "dick", "armpit", "dick", "hole", "dick", "ass", "pubes", "dick", "cum", "dick", "ass", "cum", "pubes", "cum", "feet", "armpit"];
+
 
 
 
@@ -94,3 +88,63 @@ const yearsLived = family.sort((first, second) => {
     return aLived > bLived ? 1 : -1;
 });
 console.table(yearsLived);
+
+
+
+// const de = composed.filter(function(name) {
+//     if (name.includes("de")) {
+//         return true;
+//     }
+// });
+// console.table(de);
+
+const de = composed.filter(name => name.includes("de"));
+console.table(de);
+
+
+
+// const alpha = people.sort(function(first, second) {
+//     // Next two lines are not really needed though Wes did use them... ?
+//     // const [firstLastName, firstFirstName] = first.split(", ");
+//     // const [secondLastName, secondFirstName] = second.split(", ");
+//     if (first > second) {
+//         return 1;
+//     } else {
+//         return -1;
+//     }
+// });
+// console.table(alpha);
+
+const alpha = people.sort((first, second) => first > second ? 1 : -1);
+console.table(alpha);
+
+
+
+// const sum = data.reduce(function(total, item) {
+//     if (!total[item]) {
+//        total[item] = 0;
+//     }
+//     total[item]++;
+//     return total;
+// }, {});
+// console.table(sum);
+
+const sum = data.reduce((total, item) => {
+    if (!total[item]) {
+        total[item] = 0;
+    }
+    total[item]++;
+    return total;
+}, {});
+console.table(sum);
+
+
+
+
+
+
+// EXTRA EXERCISE BY ME
+
+const content = document.querySelector("div");
+
+content.textContent = "JS30-4. Open console for this exercise :)"
